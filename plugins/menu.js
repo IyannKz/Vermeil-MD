@@ -37,7 +37,7 @@ let tags = {
   'jadibot': 'Jadi Bot',
   'host': 'Host',
   'Baileys': 'Baileys',
-  '': 'No Category',
+  'nocategory': 'No Category',
 }
 let emot = `${pickRandom(['⎔', '✦', '⭑', 'ᯬ', '⭔', '◉', '⬟', '▢', '᭻', '»', '〆', '々', '⛥', '✗', '⛊', '⚜', '⚝', '⚚', '♪'])}`
 const defaultMenu = {
@@ -57,11 +57,10 @@ Hai, *%name!*
 *Note:*
 _Jika Respon Tidak Muncul Kemungkinan Terjadi Error_
 `.trimStart(),
-  header: '▣═━–〈 *%category* 〉–━═▣',
+  header: `${cmenut} *%category* ${cmenuh}`,
   body: `┊${emot} %cmd %islimit %isPremium`,
-  footer: '┗–––––––––––━═▣\n',
-  after: `⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ 
-`,
+  footer: `${cmenuf}`,
+  after: `${cmenua}`,
 }
 let handler = async (m, { conn, groupMetadata, usedPrefix: _p, __dirname }) => {
   try {
@@ -185,60 +184,13 @@ let handler = async (m, { conn, groupMetadata, usedPrefix: _p, __dirname }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    //
     
     conn.sendHydrated(m.chat, text.trim(), wm + '\n\n' + botdate, hwaifu.getRandom(), gcwangsaf, 'Hinata Group', who.split`@`[0], 'Your Number', [
-      ['Menu', '/menu'],
-      ['Owner', '/owner'],
-      ['Test', '/ping']
+      ['🎀 Menu', '/menu'],
+      ['🪄 Owner', '/owner'],
+      ['🔖 Test', '/ping']
     ], null, false, { mentions: [text] })
     
-    /*
-    try {
- let wel = await new Canvas.Welcome()
-  .setUsername(`${name}`)
-  .setDiscriminator(`${money} Money`)
-  .setMemberCount(`${groupMetadata.participants.length}`)
-  .setGuildName(`${groupMetadata.subject}`)
-  .setAvatar(`${pp}`)
-  .setColor("border", "#000000")
-  .setColor("username-box", "#000000")
-  .setColor("discriminator-box", "#000000")
-  .setColor("message-box", "#000000")
-  .setColor("title", "#FFFFFF")
-  .setColor("avatar", "#000000")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7c3n7snGnpzS676fXaU2yxSjGsFNrCURXw&usqp=CAU")
-  .toAttachment();
-
-  conn.sendHydrated2(m.chat, text.trim(), wm, wel.toBuffer(), webs, 'Website', gcwangsaf, 'Group WhatsApp', [
-      ['Donate', '/donasi'],
-      ['Owner', '/owner'],
-      ['Test', '/ping']
-    ], m)
-    } catch {
-    let wel = await new Canvas.Welcome()
-  .setUsername(`${name}`)
-  .setDiscriminator(`${exp} Exp`)
-  .setMemberCount(`Money ${money}`)
-  .setGuildName(`${global.author}`)
-  .setAvatar(`${pp}`)
-  .setColor("border", "#000000")
-  .setColor("username-box", "#000000")
-  .setColor("discriminator-box", "#000000")
-  .setColor("message-box", "#000000")
-  .setColor("title", "#FFFFFF")
-  .setColor("avatar", "#000000")
-  .setBackground("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF7c3n7snGnpzS676fXaU2yxSjGsFNrCURXw&usqp=CAU")
-  .toAttachment();
-  
-    conn.sendHydrated2(m.chat, text.trim(), wm, wel.toBuffer(), webs, 'Website', gcwangsaf, 'Group WhatsApp', [
-      ['Donate', '/donasi'],
-      ['Owner', '/owner'],
-      ['Test', '/ping']
-    ], m)
-    }
-    */
-                //
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
