@@ -3,12 +3,12 @@ conn
 }) => {
 
     let user = global.db.data.users[m.sender]
-    let __timers = (new Date - user.lastgrab)
+    let __timers = (new Date - user.lastrob)
     let _timers = (10800000 - __timers)
     let timers = clockString(_timers) 
     
     if (user.stamina < 20) return m.reply('Stamina anda tidak cukup untuk bekerja\nharap isi stamina anda dengan _#eat_')
-    if (user.lastgrab > 10800000) throw m.reply('Kamu masih kelelahan untuk bekerja\nHarap tunggu ${timers} lagi untuk kerja taxy')
+    if (user.lastrob > 10800000) throw m.reply('Kamu masih kelelahan untuk bekerja\nHarap tunggu ${timers} lagi untuk rob')
 
 let rndm1 = `${Math.floor(Math.random() * 10)}`
 let rndm2 = `${Math.floor(Math.random() * 10)}`
@@ -21,51 +21,39 @@ let hmsil1 = `${ran1}`
 let hmsil2 = `${ran2}`
 
 let jln = `
-🚶⬛⬛⬛⬛⬛⬛⬛⬛⬛
-⬛⬜⬜⬜⬛⬛⬜⬜⬜⬛
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
-🏘️🏘️🏘️🏘️🌳  🌳 🏘️       🚕
+🏘️          🚕
 
-
-✔️ Mendapatkan orderan....
+✔️ Mengincar target....
 `
 
 let jln2 = `
-🚶🚕⬛⬛⬛⬛⬛⬛⬛⬛
-⬛⬜⬜⬜⬛⬛⬜⬜⬜⬛
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
-🏘️🏘️🏘️🏘️🌳  🌳 🏘️       
+🏘️     🚶
 
-
-➕ Mengantar ke tujuan....
+➕ Memulai aksi....
 `
 
 let jln3 = `
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
-⬛⬜⬜⬜⬛⬛⬜⬜⬜⬛
-⬛⬛⬛⬛⬛⬛⬛🚕⬛⬛
-🏘️🏘️🏘️🏘️🌳  🌳 🏘️       
+🏘️
 
-
-➕ Sampai di tujuan....
+➕ Merampok....
 `
 
 let jln4 = `
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
-⬛⬜⬜⬜⬛⬛⬜⬜⬜⬛
-⬛⬛⬛⬛⬛⬛⬛🚕⬛⬛
-🏘️🏘️🏘️🏘️🌳  🌳 🏘️ 🚶  
+         🚕
+         
+         
+         
+🏘️
 
-
-➕ 💹Menerima gaji....
+➕ 💹Berhasil kabur....
 `
 
 let hsl = `
-*—[ Hasil Taxy ]—*
+*—[ Hasil rob ]—*
 
  ➕ 💹 Uang = [ ${hmsil1} ]
  ➕ ✨ Exp = [ ${hmsil2} ] 		 
- ➕ 📦 Order Selesai = +1
+ ➕ 📦 Rob Selesai = +1
 
 Dan stamina anda berkurang -20
 `
@@ -94,13 +82,13 @@ setTimeout(() => {
                      }, 10000) 
                      
                      setTimeout(() => {
-                     m.reply('🔍Mencari pelanggan 🚕.....')
+                     m.reply(`🔍Mencari Rumah.....`)
                      }, 0) 
-  user.lastgrab = new Date * 1
+  user.lastrob = new Date * 1
 }
-handler.help = ['taxy']
+handler.help = ['rob']
 handler.tags = ['rpg']
-handler.command = /^(taxy|taxi|taki|taksi)$/i
+handler.command = /^(rob|robery)$/i
 
 export default handler
 

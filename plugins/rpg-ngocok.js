@@ -41,14 +41,7 @@ let jln2 = `
 ➕ Hampir sampai....
 `
 
-let jln3 = `
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
-⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
-⬛⬛⬛⬛⬛⬛⬛⬛⬛🚶
-🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🌳
-
-➕ Mulai mengocok....
-`
+let jln3 = `https://media.tenor.com/videos/5f5982450feb636f492022fc9bfa25cd/mp4`
 
 let jln4 = `
 ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
@@ -87,7 +80,7 @@ setTimeout(() => {
                       }, 25000)
                 
                      setTimeout(() => {
-                     m.reply(`${jln3}`)
+                     conn.sendMessage(m.chat, { video: { url: jln3 }, caption: `Mulai mengocok...`}, { quoted: fvid })
                      }, 20000) 
                         
                      setTimeout(() => {

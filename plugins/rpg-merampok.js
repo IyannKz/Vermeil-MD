@@ -23,7 +23,7 @@ let nomors = m.sender
 }
 handler.help = ['merampok *@tag*']
 handler.tags = ['rpg']
-handler.command = /^merampok$/
+handler.command = /^merampok|rob$/
 handler.limit = true
 handler.group = true
 
