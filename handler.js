@@ -65,9 +65,8 @@ export async function handler(chatUpdate) {
                     if (!isNumber(user.stroberi)) user.stroberi = 0
                 }
               
-              if (!'afkReason' in user) user.afkReason = ''
-              if (!'BannedReason' in user) user.BannedReason = ''
-              if (!'Banneduser' in user) user.Banneduser = false
+              if (!('BannedReason' in user)) user.BannedReason = ''
+              if (!('Banneduser' in user)) user.Banneduser = false
               if (!('afkReason' in user)) user.afkReason = ''
               if (!('autolevelup' in user)) user.autolevelup = false
               if (!('banned' in user)) user.banned = false
@@ -243,6 +242,7 @@ export async function handler(chatUpdate) {
               if (!isNumber(user.lastmining)) user.lastmining = 0
               if (!isNumber(user.lastmisi)) user.lastmisi = 0
               if (!isNumber(user.lastmonthly)) user.lastmonthly = 0
+              if (!isNumber(user.lastnambang)) user.lastnambang = 0
               if (!isNumber(user.lastngocok)) user.lastngocok = 0
               if (!isNumber(user.lastngojek)) user.lastngojek = 0
               if (!isNumber(user.lastrampok)) user.lastrampok = 0
@@ -530,6 +530,7 @@ export async function handler(chatUpdate) {
                     lastmining: 0,
                     lastmisi: 0,
                     lastmonthly: 0,
+                    lastnambang: 0,
                     lastngocok: 0,
                     lastngojek: 0,
                     lastrob: 0,
