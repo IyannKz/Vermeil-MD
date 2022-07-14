@@ -9,7 +9,7 @@ const inventory = {
     limit: true,
     health: true,
     money: true,
-    exp: true,
+    exp: true
   },
   items: {
     bibitanggur: true,
@@ -27,13 +27,13 @@ const inventory = {
     gold: true,
     iron: true,
     upgrader: true,
-    pet: true,
+    pet: true
   },
   durabi: {
     sworddurability: true,
     pickaxedurability: true,
     fishingroddurability: true,
-    armordurability: true,
+    armordurability: true
   },
   tools: {
     armor: {
@@ -78,14 +78,14 @@ const inventory = {
       '10': 'Netherite Pickaxe',
       '11': 'Hacker Pickaxe'
     },
-    fishingrod: true,
+    fishingrod: true
 
   },
   crates: {
     common: true,
     uncommon: true,
     mythic: true,
-    legendary: true,
+    legendary: true
   },
   pets: {
     horse: 10,
@@ -93,6 +93,14 @@ const inventory = {
     fox: 10,
     dog: 10,
     robo: 10,
+    lion: 10,
+    rhinoceros: 10,
+    dragon: 10,
+    centaur: 10,
+    kyubi: 10,
+    griffin: 10,
+    phonix: 10,
+    wolf: 10
   },
   cooldowns: {
     lastclaim: {
@@ -110,6 +118,82 @@ const inventory = {
     lastadventure: {
       name: 'adventure',
       time: adventure.cooldown
+    },
+    lastberbru: {
+      name: 'berburu',
+      time: berburu.cooldown
+    },
+    lastberkebon: {
+      name: 'berkebon',
+      time: berkebon.cooldown
+    },
+    lastbunuhi: {
+      name: 'membunuh',
+      time: membunuh.cooldown
+    },
+    lastdagang: {
+      name: 'berdagang',
+      time: berdagang.cooldown
+    },
+    lastduel: {
+      name: 'duel',
+      time: duel.cooldown
+    },
+    lastdungeon: {
+      name: 'dungeon',
+      time: dungeon.cooldown
+    },
+    lastfight: {
+      name: 'fight',
+      time: fight.cooldown
+    },
+    lastfishing: {
+      name: 'fishing',
+      time: fishing.cooldown
+    },
+    lastgrab: {
+      name: 'taxy',
+      time: taxy.cooldown
+    },
+    lasthourly: {
+      name: 'hourly',
+      time: hourly.cooldown
+    },
+    lasthunt: {
+      name: 'hunt',
+      time: hunt.cooldown
+    },
+    lastlumber: {
+      name: 'nebang',
+      time: nebang.cooldown
+    },
+    lastmining: {
+      name: 'mining',
+      time: mining.cooldown
+    },
+    lastmisi: {
+      name: 'misi',
+      time: misi.cooldown
+    },
+    lastnambang: {
+      name: 'nambang',
+      time: nambang.cooldown
+    },
+    lastngocok: {
+      name: 'ngocok',
+      time: ngocok.cooldown
+    },
+    lastngojek: {
+      name: 'ojek',
+      time: ojek.cooldown
+    },
+    lastrampok: {
+      name: 'merampok',
+      time: merampok.cooldown
+    },
+    lastroket: {
+      name: 'roket',
+      time: roket.cooldown
     }
   }
 }

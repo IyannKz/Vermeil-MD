@@ -34,7 +34,7 @@ await conn.sendHydrated(m.chat, caption, wm, x.getRandom(), null, null, null, nu
     }
     
 if (command == 'gimage2') {
-let caption = `*Hasil pencarian* ${text}\n\n*Note:* Kann`
+let caption = `*Hasil pencarian* ${text}\n\n*Note:* bx-hunter`
 let url = `https://bx-hunter.herokuapp.com/api/googleimage?query=${text}&apikey=dno8pZJW`
 let js = await fetch(url)
 let jp = await js.json()
@@ -58,7 +58,7 @@ let caption = `*⎔┉━「 ${command} 」━┉⎔*\n`
     }
 
 if (command == 'gimage4') {
-let caption = `*Hasil pencarian* ${text}\n${x.origin.title}\n${x.origin.source}\n*Note:* Beni`
+let caption = `*Hasil pencarian* ${text}\n*Note:* xcoders`
 let url = `https://api-xcoders.xyz/api/search/image2?query=${text}&apikey=xcoders`
 let js = await fetch(url)
 let jp = await js.json()
@@ -70,7 +70,7 @@ await conn.sendHydrated(m.chat, caption, wm, jp.result[0].url, null, null, null,
     }
 
 if (command == 'gimage5') {
-let caption = `*Hasil pencarian* ${text}\n\n*Note:* Melcanz Limit`
+let caption = `*Hasil pencarian* ${text}\n\n*Note:* nzcha`
 let url = `https://nzcha-apii.herokuapp.com/googleimage?q=${text}`
 let js = await fetch(url)
 let jp = await js.json()

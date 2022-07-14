@@ -6,7 +6,7 @@ let frep = { contextInfo: { externalAdReply: {title: global.wm, body: global.aut
 let imgr = thumbnailUrl.getRandom()
 
     let [_, code, expired] = text.match(linkRegex) || []
-    if (!code) throw 'Link invalid'
+    if (!code) throw `*Example:* ${usedPrefix + command} https://chat.whatsapp.com/DpqXHCpKCvi1TquMkI3mCI`
     let res = await conn.groupAcceptInvite(code)
     if (!res) throw res.toString()
     let name = await conn.getName(res).catch(_ => null)

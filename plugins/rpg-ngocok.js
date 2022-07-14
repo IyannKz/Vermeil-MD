@@ -1,7 +1,10 @@
+import { sticker } from '../lib/sticker.js'
+
 let handler = async (m, {
 	conn,
 	usedPrefix
 }) => {
+
 	let user = global.db.data.users[m.sender]
 	let __timers = (new Date - user.lastngocok)
 	let _timers = (500000 - __timers)
@@ -9,75 +12,79 @@ let handler = async (m, {
 	
     if (user.stamina < 20) return m.reply(`Stamina anda tidak cukup untuk ngocok\nharap isi stamina anda dengan _#eat_`)
 	if (new Date - user.lastngocok > 500000) {
-		let randomaku1 = `${Math.floor(Math.random() * 5)}`
-		let randomaku2 = `${Math.floor(Math.random() * 10)}`
-		let randomaku4 = `${Math.floor(Math.random() * 7)}`
-		let randomaku3 = `${Math.floor(Math.random() * 4)}`
-		let randomaku5 = `${Math.floor(Math.random() * 200)}`
-		let randomaku6 = `${Math.floor(Math.random() * 200)}`
-		let randomaku7 = `${Math.floor(Math.random() * 20)}`
-		let randomaku8 = `${Math.floor(Math.random() * 100)}`
-		let randomaku9 = `${Math.floor(Math.random() * 100)}`
-			.trim()
+		let hus1 = `${(30, 300).getRandom()}`
+		let hus2 = `${(3000, 30000).getRandom()}`
+		let hus3 = `${(30, 300).getRandom()}`
+		
+		let hut = `
+⬛⬛⬛⬛⬛⬛⬛⬛⬛🚶
+⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
+⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
+🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🌳
 
-		let rbrb1 = (randomaku1 * 1)
-		let rbrb2 = (randomaku2 * 1)
-		let rbrb3 = (randomaku3 * 1)
-		let rbrb4 = (randomaku4 * 1)
-		let rbrb5 = (randomaku5 * 1)
-		let rbrb6 = (randomaku6 * 1)
-		let rbrb7 = (randomaku7 * 1)
-		let rbrb8 = (randomaku8 * 1)
-		let rbrb9 = (randomaku9 * 1)
+✔️ Mencari area....
+`
 
-		hsl = `
-*《 Hasil Ngocok Kali Ini 》*
+let hut2 = `
+⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
+⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
+⬛⬛⬛⬛🚶⬛⬛⬛⬛⬛
+🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🌳
 
- *💎 = [ ${rbrb1} ] Diamond*
- *⛓️ = [ ${rbrb2} ] Iron*
- *🪙 = [ ${rbrb3} ] Gold*
- *💚 = [ ${rbrb4} ] Emerald*
- *🪨 = [ ${rbrb5} ] Rock*
- *🌕 = [ ${rbrb6} ] Clay*
- *🕳️ = [ ${rbrb7} ] Coal*
- *🌑 = [ ${rbrb8} ] Sand*
- *✉️ = [ ${rbrb9} ] Exp*
+➕ Hampir sampai....
+`
+
+let hut3 = `
+⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
+⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
+⬛🚶⬛⬛⬛⬛⬛⬛⬛⬛
+🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🌳
+
+➕ Mulai mengocok....
+`
+
+		let hsl = `
+*《 Hasil ngocok Kali Ini 》*
+
+ *🌳 = [ ${hus1} ] esteh*
+ *🌳 = [ ${hus2} ] ganja*
+ *✉️ = [ -${hus3} ] exp*
+ *✉️ = [ -${hus2} ] exp*
  
  Stamina anda berkurang -20
 `
-		user.diamond += rbrb1
-		user.iron += rbrb2
-		user.gold += rbrb3
-		user.emerald += rbrb4
-		user.rock += rbrb5
-		user.clay += rbrb6
-		user.coal += rbrb7
-		user.sand += rbrb8
-		user.exp += rbrb9
-		user.stamina -= 20
+	user.axedurability -= 5
+	user.stamina -= 20
+    user.money -= hus2
+  	user.esteh += hus1
+  	user.ganja += hus3
+    user.exp -= hus3
 
 		setTimeout(() => {
-			m.reply(`${hsl}`)
+			await conn.sendButton(m.chat, hsl, wm, null, [
+		['Inventory', '/inv']
+	], m)
 		}, 20000)
 
 		setTimeout(() => {
-			m.reply(`Nah ini dia`)
+		let stiker = await sticker('https://media.tenor.com/videos/5f5982450feb636f492022fc9bfa25cd/mp4', false, global.packname, wm)
+    await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
 		}, 18000)
 
 		setTimeout(() => {
-			m.reply('mulai menggali ore')
+			m.reply(hut3)
 		}, 15000)
 
 		setTimeout(() => {
-			m.reply('Sabar')
+			m.reply(hut2)
 		}, 14000)
 
 		setTimeout(() => {
-			m.reply('Masuk ke kamar dulu ngab')
+			m.reply(hut)
 		}, 0)
 		user.lastngocok = new Date * 1
 		user.pickaxedurability -= 5
-	} else conn.sendButton(m.chat, `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Dulu sekitar ${timers}*\n*Untuk bisa melanjutkan ngocok*\n`, author, null, [
+	} else await conn.sendButton(m.chat, `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Dulu sekitar ${timers}*\n*Untuk bisa melanjutkan ngocok*\n`, author, null, [
 		['Inventory', '/inv']
 	], m)
 	
