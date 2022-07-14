@@ -677,6 +677,8 @@ export async function handler(chatUpdate) {
                 if (!('detect' in chat)) chat.detect = false
                 if (!('getmsg' in chat))  chat.getmsg = true
                 if (!('isBanned' in chat)) chat.isBanned = false
+                if (!('lastAnime' in chat)) chat.lastAnime = true
+                if (!('latestNews' in chat)) chat.latestNews = true
                 if (!('nsfw' in chat)) chat.nsfw = false
                 if (!('premium' in chat)) chat.premium = false
                 if (!('premiumTime' in chat)) chat.premiumTime = false
@@ -689,7 +691,7 @@ export async function handler(chatUpdate) {
                 if (!('viewonce' in chat)) chat.viewonce = false
                 if (!('viewOnce' in chat)) chat.viewOnce = false
                 if (!('welcome' in chat)) chat.welcome = true
-                if (!isNumber(chat.expired)) chat.expired = 0
+                if (!isNumber(chat.expired)) chat.expired = 0  
             } else
                 global.db.data.chats[m.chat] = {
                     antiDelete: false,
@@ -700,6 +702,8 @@ export async function handler(chatUpdate) {
 	                expired: 0,
 	                getmsg: true,
 	                isBanned: false,
+	                lastAnime = true,
+	                latestNews = true,
 	                nsfw: false,
 	                premium: false,
 	                premiumTime: false,
