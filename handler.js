@@ -672,13 +672,13 @@ export async function handler(chatUpdate) {
             if (chat) {
                 if (!('antiDelete' in chat)) chat.antiDelete = false
                 if (!('antiLink' in chat)) chat.antiLink = false
-                if (!('antiToxic' in chat)) chat.antiToxic = true
+                if (!('antiToxic' in chat)) chat.antiToxic = false
                 if (!('delete' in chat)) chat.delete = false
                 if (!('detect' in chat)) chat.detect = false
-                if (!('getmsg' in chat))  chat.getmsg = true
+                if (!('getmsg' in chat))  chat.getmsg = false
                 if (!('isBanned' in chat)) chat.isBanned = false
-                if (!('lastAnime' in chat)) chat.lastAnime = true
-                if (!('latestNews' in chat)) chat.latestNews = true
+                if (!('lastAnime' in chat)) chat.lastAnime = false
+                if (!('latestNews' in chat)) chat.latestNews = false
                 if (!('nsfw' in chat)) chat.nsfw = false
                 if (!('premium' in chat)) chat.premium = false
                 if (!('premiumTime' in chat)) chat.premiumTime = false
@@ -690,20 +690,20 @@ export async function handler(chatUpdate) {
                 if (!('sWelcome' in chat)) chat.sWelcome = ''
                 if (!('viewonce' in chat)) chat.viewonce = false
                 if (!('viewOnce' in chat)) chat.viewOnce = false
-                if (!('welcome' in chat)) chat.welcome = true
+                if (!('welcome' in chat)) chat.welcome = false
                 if (!isNumber(chat.expired)) chat.expired = 0  
             } else
                 global.db.data.chats[m.chat] = {
                     antiDelete: false,
 	                antiLink: false,
-	                antiToxic: true,
+	                antiToxic: false,
 	                delete: false,
 	                detect: false,
 	                expired: 0,
-	                getmsg: true,
+	                getmsg: false,
 	                isBanned: false,
-	                lastAnime = true,
-	                latestNews = true,
+	                lastAnime = false,
+	                latestNews = false,
 	                nsfw: false,
 	                premium: false,
 	                premiumTime: false,
@@ -715,25 +715,25 @@ export async function handler(chatUpdate) {
 	                sWelcome: '',
 	                viewOnce: false,
 	                viewonce: false,
-	                welcome: true
+	                welcome: false
 	                
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
             if (settings) {
                 if (!('self' in settings)) settings.self = false
-                if (!('autoread' in settings)) settings.autoread = true
-                if (!('restrict' in settings)) settings.restrict = true
-                if (!'jadibot' in settings) settings.jadibot = true
-                if (!('autorestart' in settings)) settings.autorestart = true
+                if (!('autoread' in settings)) settings.autoread = false
+                if (!('restrict' in settings)) settings.restrict = false
+                if (!'jadibot' in settings) settings.jadibot = false
+                if (!('autorestart' in settings)) settings.autorestart = false
                 if (!('restartDB' in settings)) settings.restartDB = 0
              
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
-                autoread: true,
-                jadibot: true,
-                restrict: true,
-                autorestart: true,
+                autoread: false,
+                jadibot: false,
+                restrict: false,
+                autorestart: false,
                 restartDB: 0
             }
         } catch (e) {
@@ -1115,9 +1115,9 @@ export async function participantsUpdate({ id, participants, action }) {
   let katarandom = restext.split('\n')
   
   this.sendHydrated(id, text, wm + '\n\n' + botdate, action === 'add' ? wel.toBuffer() : lea.toBuffer(), gcwangsaf, (action == 'add' ? 'Hinata Group' : 'Nitip Gorengan'), user.split`@`[0], 'Telpon', [
-      ['Menu', '/menu'],
-      ['Test', '/ping'],
-      ['Ok !\n\n' + katarandom.getRandom() + '\n\n', '...']
+      ['🎀 Menu', '/menu'],
+      ['🪄 Test', '/ping'],
+      ['Ok 🎉\n\n' + katarandom.getRandom() + '\n\n', '...']
     ], null, false, { mentions: [user] })
                       //  this.sendButton(id, text, author, action === 'add' ? wel.toBuffer() : lea.toBuffer(), [["Menu", ".menu"],["Owner", ".owner"]], null, false, { mentions: [user] })
                     }
