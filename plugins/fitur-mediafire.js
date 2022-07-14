@@ -15,7 +15,7 @@ let caption = `
 *Link:* ${lk}
 `.trim()
     m.reply(caption)
-    await conn.sendFile(m.chat, lk, filename, '', m, null, { mimetype: xa, asDocument: true })
+    await conn.sendFile(m.chat, lk, xs, xa, m, null, { mimetype: xa, asDocument: true })
     }
 handler.help = ['mediafire2'].map(v => v + ' <url>')
 handler.tags = ['downloader']

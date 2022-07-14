@@ -118,82 +118,6 @@ const inventory = {
     lastadventure: {
       name: 'adventure',
       time: adventure.cooldown
-    },
-    lastberbru: {
-      name: 'berburu',
-      time: berburu.cooldown
-    },
-    lastberkebon: {
-      name: 'berkebon',
-      time: berkebon.cooldown
-    },
-    lastbunuhi: {
-      name: 'membunuh',
-      time: membunuh.cooldown
-    },
-    lastdagang: {
-      name: 'berdagang',
-      time: berdagang.cooldown
-    },
-    lastduel: {
-      name: 'duel',
-      time: duel.cooldown
-    },
-    lastdungeon: {
-      name: 'dungeon',
-      time: dungeon.cooldown
-    },
-    lastfight: {
-      name: 'fight',
-      time: fight.cooldown
-    },
-    lastfishing: {
-      name: 'fishing',
-      time: fishing.cooldown
-    },
-    lastgrab: {
-      name: 'taxy',
-      time: taxy.cooldown
-    },
-    lasthourly: {
-      name: 'hourly',
-      time: hourly.cooldown
-    },
-    lasthunt: {
-      name: 'hunt',
-      time: hunt.cooldown
-    },
-    lastlumber: {
-      name: 'nebang',
-      time: nebang.cooldown
-    },
-    lastmining: {
-      name: 'mining',
-      time: mining.cooldown
-    },
-    lastmisi: {
-      name: 'misi',
-      time: misi.cooldown
-    },
-    lastnambang: {
-      name: 'nambang',
-      time: nambang.cooldown
-    },
-    lastngocok: {
-      name: 'ngocok',
-      time: ngocok.cooldown
-    },
-    lastngojek: {
-      name: 'ojek',
-      time: ojek.cooldown
-    },
-    lastrampok: {
-      name: 'merampok',
-      time: merampok.cooldown
-    },
-    lastroket: {
-      name: 'roket',
-      time: roket.cooldown
     }
   }
 }
@@ -226,8 +150,11 @@ ${cooldowns}` : ''}
 *✧ dungeon: ${user.lastdungeon == 0 ? '✅': '❌'}*
 *✧ mining: ${user.lastmining == 0 ? '✅': '❌'}*
 *✧ roket: ${user.lastroket == 0 ? '✅': '❌'}*
-*✧ mancing: ${user.lastmancing == 0 ? '✅': '❌'}*
+*✧ mancing: ${user.lastfishing == 0 ? '✅': '❌'}*
 *✧ ngojek: ${user.lastngojek == 0 ? '✅': '❌'}*
+*✧ taxy: ${user.lastgrab == 0 ? '✅': '❌'}*
+*✧ nebang: ${user.lastlumber == 0 ? '✅': '❌'}*
+*✧ ngocok: ${user.lastngocok == 0 ? '✅': '❌'}*
 `.trim()
 conn.sendButton(m.chat, '*━┈━┈━『 INVENTORY 』━┈━┈━*', caption, imgr + 'inventory', [
 [`ᴛʀᴀɴsғᴇʀ`, `.transfer`],

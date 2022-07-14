@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import axios from 'axios'
+
 let handler = async(m, { conn, text }) => {
 
     if (!text) return conn.reply(m.chat, 'Harap Masukan Nama Film Animenya', m)
@@ -22,7 +22,7 @@ let hasil = `🎥Film Dari : ${x.title}
 Link : ${x.link}
 
 📖Sinopsis : ${x.desc}`
-    conn.sendButton(m.chat, x.thumbnail, hasil, '© Hinata-Md', 'Internet', '.? internet', m)
+    await conn.sendButton(m.chat, hasil, wm, x.thumbnail, [['Internet', '.menulist internet']], m)
 }
 handler.help = ['filmanime', 'film'].map(v => v + '<film>')
 handler.tags = ['internet', 'anime']

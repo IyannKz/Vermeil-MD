@@ -69,7 +69,6 @@ var hsl = `
  ➕ ✨ Exp = [ ${zero5} ] 		 
  ➕ 😍 Mendarat Selesai = +1
 ➕  📥Total Mendarat Sebelumnya : ${order}
-${wm}
 `
 
 

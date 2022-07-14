@@ -23,6 +23,8 @@ let fdoc = {quoted:{key : {participant : '0@s.whatsapp.net'},message: {documentM
 	{title: "🎙️️ | AutoVn", rowId: `${usedPrefix + command} autovn`},
 	{title: "🎙️️ | AutoDelVn", rowId: `${usedPrefix + command} autodelvn`},
 	{title: "📷 | AutoSticker", rowId: `${usedPrefix + command} autosticker`},
+	{title: "📷 | AutoUpNews", rowId: `${usedPrefix + command} autoupnews`},
+	{title: "📷 | AutoUpAnime", rowId: `${usedPrefix + command} autoupnime`},
 	{title: "❗ | AntiSticker", rowId: `${usedPrefix + command} antisticker`},
 	{title: "👤 | AutoJoin", rowId: `${usedPrefix + command} autojoin`},
 	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
@@ -215,7 +217,7 @@ const listMessage = {
           throw false
         }
       }
-      chat.antiS3ticker = isEnable
+      chat.antiSticker = isEnable
       break
       case 'autojoin':
         if (!isROwner) {
@@ -223,6 +225,20 @@ const listMessage = {
           throw false
         }
       chat.autoJoin = isEnable
+      break
+      case 'autoupnews':
+        if (!isROwner) {
+          global.dfail('rowner', m, conn)
+          throw false
+        }
+      chat.updateAnimeNews = isEnable
+      break
+      case 'autoupnime':
+        if (!isROwner) {
+          global.dfail('rowner', m, conn)
+          throw false
+        }
+      chat.updateAnime = isEnable
       break
      case 'toxic':
        if (m.isGroup) {

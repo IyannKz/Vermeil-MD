@@ -1,23 +1,30 @@
-import { sticker } from '../lib/sticker.js'
-
-let handler = async (m, {
-	conn,
-	usedPrefix
+let handler = async (m, { 
+conn, usedPrefix
 }) => {
 
-	let user = global.db.data.users[m.sender]
-	let __timers = (new Date - user.lastngocok)
-	let _timers = (500000 - __timers)
-	let timers = clockString(_timers)
-	
-    if (user.stamina < 20) return m.reply(`Stamina anda tidak cukup untuk ngocok\nharap isi stamina anda dengan _#eat_`)
-	if (new Date - user.lastngocok > 500000) {
-		let hus1 = `${(30, 300).getRandom()}`
-		let hus2 = `${(3000, 30000).getRandom()}`
-		let hus3 = `${(30, 300).getRandom()}`
-		
-		let hut = `
-⬛⬛⬛⬛⬛⬛⬛⬛⬛🚶
+    let user = global.db.data.users[m.sender]
+    let __timers = (new Date - user.lastngocok)
+    let _timers = (10800000 - __timers)
+    let timers = clockString(_timers) 
+    
+    if (user.stamina < 20) return m.reply('Stamina anda tidak cukup untuk bekerja\nharap isi stamina anda dengan _#eat_')
+    if (user.lastngocok > 10800000) throw m.reply('Kamu masih kelelahan untuk bekerja\nHarap tunggu ${timers} lagi untuk kerja ngocok')
+    
+    let rndm1 = `${Math.floor(Math.random() * 300)}`
+		let rndm2 = `${Math.floor(Math.random() * 3000)}`
+		let rndm3 = `${Math.floor(Math.random() * 300)}`
+.trim()
+
+let ran1 = (rndm1 * 10)
+let ran2 = (rndm2 * 10)
+let ran3 = (rndm3 * 10)
+
+let hmsil1 = `${ran1}`
+let hmsil2 = `${ran2}`
+let hmsil3 = `${ran3}`
+
+let jln = `
+🚶⬛⬛⬛⬛⬛⬛⬛⬛⬛
 ⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
 ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
 🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🌳
@@ -25,84 +32,87 @@ let handler = async (m, {
 ✔️ Mencari area....
 `
 
-let hut2 = `
-⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
+let jln2 = `
+⬛⬛⬛⬛⬛⬛🚶⬛⬛⬛
 ⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
-⬛⬛⬛⬛🚶⬛⬛⬛⬛⬛
+⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
 🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🌳
 
 ➕ Hampir sampai....
 `
 
-let hut3 = `
+let jln3 = `
 ⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
 ⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
-⬛🚶⬛⬛⬛⬛⬛⬛⬛⬛
+⬛⬛⬛⬛⬛⬛⬛⬛⬛🚶
 🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🌳
 
 ➕ Mulai mengocok....
 `
 
-		let hsl = `
-*《 Hasil ngocok Kali Ini 》*
+let jln4 = `
+⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
+⬛⬜⬜⬜⬛⬜⬜⬜⬛⬛
+⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛
+🌳🏘️🌳🌳  🌳 🏘️ 🌳🌳🚶
 
- *🌳 = [ ${hus1} ] esteh*
- *🌳 = [ ${hus2} ] ganja*
- *✉️ = [ -${hus3} ] exp*
- *✉️ = [ -${hus2} ] exp*
+➕ 💹Menerima hasil....
+`
+
+let hsl = `
+*《 Hasil ngocok Kali Ini 》*
+ *💹 = [ ${hmsil1} ] money*
+ *🌳 = [ ${hmsil2} ] Esteh*
+ *🌳 = [ ${hmsil3} ] Ganja*
+ *✉️ = [ ${hmsil4} ] exp*
  
  Stamina anda berkurang -20
 `
-	user.axedurability -= 5
-	user.stamina -= 20
-    user.money -= hus2
-  	user.esteh += hus1
-  	user.ganja += hus3
-    user.exp -= hus3
 
-		setTimeout(() => {
-			await conn.sendButton(m.chat, hsl, wm, null, [
-		['Inventory', '/inv']
-	], m)
-		}, 20000)
-
-		setTimeout(() => {
-		let stiker = await sticker('https://media.tenor.com/videos/5f5982450feb636f492022fc9bfa25cd/mp4', false, global.packname, wm)
-    await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
-		}, 18000)
-
-		setTimeout(() => {
-			m.reply(hut3)
-		}, 15000)
-
-		setTimeout(() => {
-			m.reply(hut2)
-		}, 14000)
-
-		setTimeout(() => {
-			m.reply(hut)
-		}, 0)
-		user.lastngocok = new Date * 1
-		user.pickaxedurability -= 5
-	} else await conn.sendButton(m.chat, `\n*Sepertinya Anda Sudah Kecapekan*\n*Silahkan Istirahat Dulu sekitar ${timers}*\n*Untuk bisa melanjutkan ngocok*\n`, author, null, [
-		['Inventory', '/inv']
-	], m)
+user.axedurability -= 5
+user.stamina -= 20
+user.money -= hmsil1
+user.esteh += hmsil2
+user.ganja += hmsil3
+user.exp += hmsil4
 	
+setTimeout(() => {
+                     conn.sendButton(m.chat, hsl, wm, null, [
+		['Inventory', '/inv']
+	], m)
+                     }, 27000) 
+               
+                     setTimeout(() => {
+                     m.reply(`${jln4}`)
+                      }, 25000)
+                
+                     setTimeout(() => {
+                     m.reply(`${jln3}`)
+                     }, 20000) 
+                        
+                     setTimeout(() => {
+                     m.reply(`${jln2}`)
+                     }, 15000) 
+                    
+                     setTimeout(() => {
+                     m.reply(`${jln}`)
+                     }, 10000) 
+                     
+                     setTimeout(() => {
+                     m.reply(`🔍Mencari Area ngocok.....`)
+                     }, 0) 
+  user.lastngocok = new Date * 1
 }
 handler.help = ['ngocok']
 handler.tags = ['rpg']
-handler.command = /^(ngocok)$/i
+handler.command = /^(ngocok|mengocok)$/i
+
 export default handler
 
 function clockString(ms) {
-	let h = Math.floor(ms / 3600000)
-	let m = Math.floor(ms / 60000) % 60
-	let s = Math.floor(ms / 1000) % 60
-	console.log({
-		ms,
-		h,
-		m,
-		s
-	})
-	return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+  let h = Math.floor(ms / 3600000)
+  let m = Math.floor(ms / 60000) % 60
+  let s = Math.floor(ms / 1000) % 60
+  console.log({ms,h,m,s})
+  return [h, m, s].map(v => v.toString().padStart(2, 0) ).join(':')
 }
