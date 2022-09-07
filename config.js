@@ -6,21 +6,12 @@ import moment from 'moment-timezone'
 
 /**Oᴡɴᴇʀ number**/
 global.owner = [
-  ['6282195322106', '️Oᴡɴᴇʀ One ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Two ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Three ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Four ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Five ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Six ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Seven ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Eight ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Nine ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true],
-  ['6282195322106', '️Oᴡɴᴇʀ Teen ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ', true]
+  ['6285742344873', '️Oᴡɴᴇʀ ᴠᴇʀᴍᴇɪʟ-ʙᴏᴛ', true]
   // [number, dia creator/owner?, dia developer?]
 ] // Put your number here
 global.mods = [] // Want some help?
 global.prems = [] // Premium user has unlimited limit
-global.girlfren = [] // Your gf/pacar
+global.girlfren = [628990702775] // Your gf/pacar
 
 //Api website
 global.APIs = { // API Prefix
@@ -72,24 +63,24 @@ let keyalpha = api[Math.floor(Math.random() * api.length)]
 global.apikeys = keyalpha
 
 /*============== NOMOR ==============*/
-global.nomorbot = '6285171216276'
-global.nomorown = '6282195322106'
-global.namebot = 'ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ'
-global.nameown = 'Oᴡɴᴇʀ ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ'
+global.nomorbot = '6285742966427'
+global.nomorown = '6285742344873'
+global.namebot = 'ᴠᴇʀᴍᴇɪʟ-ʙᴏᴛ'
+global.nameown = 'Oᴡɴᴇʀ ᴠᴇʀᴍᴇɪʟ-ʙᴏᴛ'
 
 /*============== WATERMARK ==============*/
-global.wm = '                「 ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ あ⁩ 」' //Main Watermark
+global.wm = '                「 ᴠᴇʀᴍᴇɪʟ-ʙᴏᴛ あ⁩ 」' //Main Watermark
 global.wm2 = '꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘օառɛʀ˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷'
-global.wm3 = '⫹⫺ ᴴ ᴵ ᴺ ᴬ ᵀ ᴬ ⁻ ᴹ ᴰ'
+global.wm3 = 'ᴠᴇʀᴍᴇɪʟ-ʙᴏᴛ'
 global.botdate = `⫹⫺ Date :  ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}`
 global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}`
 global.titlebot = `⫹⫺ Time Sever : ${moment.tz('Asia/Jakarta').format('HH:mm:ss')}\n⫹⫺ Date Server :  ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}`
 
 /*============== LOGO ==============*/
 global.thumb = 'https://i.ibb.co/ccY2Q0k/20220429-191026.jpg' //Main Thumbnail
-global.imagebot = 'https://telegra.ph/file/793b6accf3758f092742a.jpg'
+global.imagebot = 'https://telegra.ph/file/eb1ad2fdd2b96199e622d.jpg'
 global.giflogo = 'https://telegra.ph/file/a46ab7fa39338b1f54d5a.mp4'
-global.thumbs = ['https://i.ibb.co/ccY2Q0k/20220429-191026.jpg', 'https://telegra.ph/file/f87047ec6e5f0d4a9ea91.jpg', 'https://telegra.ph/file/88edbb01051b397574def.jpg','https://telegra.ph/file/7957630a57078c5ec0400.jpg']
+global.thumbs = ['https://telegra.ph/file/eb1ad2fdd2b96199e622d.jpg']
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
 global.flaaa = [
  'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
@@ -100,19 +91,16 @@ global.flaaa = [
 ]
 
 global.thumbnailUrl = [
-  'https://telegra.ph/file/81260a8b9e8cff26d2b48.jpg', 'https://telegra.ph/file/ac4928f0824a2a0492737.jpg',
-  'https://telegra.ph/file/6359b013bc7e52c3b346f.jpg', 'https://telegra.ph/file/d43c89a5d2da72875ec05.jpg',
-  'https://telegra.ph/file/7d6c0e35f9c8f52715541.jpg', 'https://telegra.ph/file/ef4b742d47e6a9115e2ff.jpg',
-  'https://telegra.ph/file/55e5af5f33fbd57104187.jpg', 'https://telegra.ph/file/af236598456b95884bd15.jpg',
-  'https://telegra.ph/file/de92ed4a729887ffc974c.jpg', 'https://telegra.ph/file/00ce42a193b1dbbf907d4.jpg'
+  'https://telegra.ph/file/eb1ad2fdd2b96199e622d.jpg', 'https://telegra.ph/file/eb1ad2fdd2b96199e622d.jpg',
+
 ]
 
 /*============== SOCIAL ==============*/
 global.sig = 'https://instagram.com/wudysoft.2'
-global.sgh = 'https://github.com/AyGemuy'
-global.sgc = 'https://chat.whatsapp.com/I2cagI7uWN59oxMomPQvfM'
-global.sdc = 'https://github.com/AyGemuy'
-global.snh = 'https://github.com/AyGemuy'
+global.sgh = 'https://github.com/IyannKz'
+global.sgc = 'https://chat.whatsapp.com/ITiCuritEfx60TOHTMFgkL'
+global.sdc = 'https://github.com/IyannKz'
+global.snh = 'https://github.com/IyannKz'
 
 /*============== HENTAI ==============*/ 
 //OPTIONS
@@ -378,23 +366,23 @@ global.eror = 'Erorr...'
 global.wait = 'Wait...'
 global.render = 'Render...'
 global.webs = 'https://s.id/Cerdasin62/'//Your Website
-global.logo = "https://i.pinimg.com/564x/f7/d2/e4/f7d2e48fd59a8c01cd396bfc70b0a2d1.jpg"//Your logo
+global.logo = "https://telegra.ph/file/eb1ad2fdd2b96199e622d.jpg"//Your logo
 global.gcwangsaf = "https://chat.whatsapp.com/I2cagI7uWN59oxMomPQvfM"//Link Group whatsapp
 
 /*============== PAYMENT ==============*/
 global.saweria = "https://saweria.co/wudysoft"// website saweria.co
-global.dana = ["0887435373103"]
-global.pulsa = ["082195322106"]//pulsa here
+global.dana = ["085742344873"]
+global.pulsa = ["085742344873"]//pulsa here
 global.trakteer = "https://trakteer.id/wudysoft"//Link url https://
 global.paypal = "wudysoft@gmail.com"//paypal email
-global.gopay = "082195322106"//Numver for Payment digital Gopay Gojek
+global.gopay = "085742344873"//Numver for Payment digital Gopay Gojek
 
 /*============== PAYMENT ==============*/
-global.pdana = '0887435373103'
-global.povo = '082195322106'
-global.pgopay = '082195322106'
-global.ppulsa = '082195322106'
-global.ppulsa2 = '082195322106'
+global.pdana = '085742344873'
+global.povo = '085742344873'
+global.pgopay = '085742344873'
+global.ppulsa = '085742966427'
+global.ppulsa2 = '085742966427'
 global.psaweria = 'https://saweria.com/Wudysoft'
 
 //Rpg
